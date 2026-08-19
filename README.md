@@ -11,17 +11,19 @@ Ver [integrantes.md](integrantes.md)
 
 ## Descripción del proyecto
 
-_Breve descripción del sistema que el grupo está analizando y documentando._
+Sistema web para la gestión integral de un gimnasio, que permite administrar socios, pagos, asistencia, rutinas y turnos. Está orientado a mejorar la organización interna y la experiencia de los clientes.
 
 ## Caso de estudio
 
-_Nombre del organismo o empresa comitente y contexto del problema que el sistema resuelve._
+El sistema está orientado a un gimnasio de la ciudad de Rosario que actualmente gestiona sus operaciones de forma manual o con herramientas difusas. Esto genera problemas en el control de pagos, seguimiento de asistencia y organización de turnos.
+
+El sistema propuesto busca concentrar toda la información en un único lugar, facilitando la administración y reduciendo cualquier tipo de error.
 
 ## Entregas
 
 | Entrega | Descripción | Fecha | Estado |
 |---------|-------------|-------|--------|
-| EP-01 | Presentación preliminar | | |
+| EP-01 |Stakeholders+Requisitos|19/08/26|en progreso |
 | EP-02 | | | |
 | Final | Versión definitiva | | |
 
@@ -47,10 +49,3 @@ _Nombre del organismo o empresa comitente y contexto del problema que el sistema
 │   └── wireframes/
 └── cuestionario/
 ```
-
-## Instrucciones operativas
-
-- Un integrante del grupo es responsable de subir los cambios al repositorio.
-- Completar `integrantes.md` antes de la primera entrega.
-- Mantener los archivos en la carpeta correspondiente según la estructura indicada.
-- Los diagramas deben entregarse en formato PlantUML (`.puml`). Se pueden visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/).
