@@ -1,4 +1,5 @@
-# [Nombre del Sistema] — Grupo [N]
+
+# [Sistema para gimnasio ] — Grupo [9]
 
 > Materia: Diseño de Sistemas Web — Analista Funcional de Sistemas  
 > Institución: Terciario Urquiza — Rosario  
@@ -48,4 +49,3 @@ El sistema propuesto busca concentrar toda la información en un único lugar, f
 │   ├── er.puml
 │   └── wireframes/
 └── cuestionario/
-```
