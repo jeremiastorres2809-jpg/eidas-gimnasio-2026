@@ -1,21 +1,41 @@
 # Stakeholders
 
-_Identificar y justificar las partes interesadas relevantes para el sistema._
-_Para cada una: describir su rol y por qué es clave para el proyecto._
+Identificación de las partes interesadas del sistema de gestión de gimnasio.
 
 ---
 
-## [Nombre del stakeholder]
+## Dueño del gimnasio
 
-**Tipo:** Interno / Externo / Sistema externo  
-**Por qué es clave:** _Justificación._
+**Tipo:** Interno  
+**Por qué es clave:** Es quien toma decisiones sobre el negocio. Necesita controlar ingresos, cantidad de socios y el funcionamiento general del gimnasio.
 
 ---
 
-## [Nombre del stakeholder]
+## Recepcionista / Administrador
 
-**Tipo:** Interno / Externo / Sistema externo  
-**Por qué es clave:** _Justificación._
+**Tipo:** Interno  
+**Por qué es clave:** Es el usuario principal del sistema. Se encarga de registrar socios, gestionar pagos y controlar la asistencia.
+
+---
+
+## Socios / Clientes
+
+**Tipo:** Externo  
+**Por qué es clave:** Son quienes utilizan el gimnasio. Interactúan con el sistema para consultar su estado de pago, asistencia y turnos.
+
+---
+
+## Entrenadores / Profesores
+
+**Tipo:** Interno  
+**Por qué es clave:** Gestionan rutinas y seguimiento de los clientes. Necesitan acceder a información de los socios para brindar un mejor servicio.
+
+---
+
+## Sistema de pagos
+
+**Tipo:** Sistema externo  
+**Por qué es clave:** Permite procesar pagos de la membresia. Es fundamental para garantizar transacciones seguras y registrar ingresos correctamente.
 
 ---
 
@@ -23,6 +43,8 @@ _Para cada una: describir su rol y por qué es clave para el proyecto._
 
 | Stakeholder | Tipo | Nivel de impacto |
 |-------------|------|-----------------|
-| | | Alto / Medio / Bajo |
-| | | Alto / Medio / Bajo |
-| | | Alto / Medio / Bajo |
+| Dueño del gimnasio       | Interno          | Alto             |
+| Recepcionista            | Interno          | Alto             |
+| Socios                   | Externo          | Alto             |
+| Entrenadores             | Interno          | Medio            |
+| Sistema de pagos         | Sistema externo  | Alto             |
