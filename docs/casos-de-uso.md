@@ -9,7 +9,7 @@ _Describir brevemente los actores identificados y las relaciones principales (in
 
 ---
 
-## CU-01 — [Nombre]
+## CU-001 — [Registrar Usuario] 
 
 | Campo | Detalle |
 |-------|---------|
@@ -42,7 +42,38 @@ _Describir brevemente los actores identificados y las relaciones principales (in
 
 ---
 
-## CU-02 — [Nombre]
+## CU-002 — [Asignar Rutina] 
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-02 |
+| Nombre | |
+| Descripción | |
+| Actores | Principal: / Secundario: |
+| Precondiciones | |
+| Postcondiciones | Éxito: / Fallo: |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | | |
+| 2 | | |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | | |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento | |
+| Frecuencia | |
+| Importancia | |
+| Urgencia | |
+
+### CU-003 — [Ver Horarios] 
 
 | Campo | Detalle |
 |-------|---------|
