@@ -59,3 +59,119 @@ Si la cuota está vencida o el DNI no existe, muestra un cartel rojo de "Membres
 | Estimable |SI  |Es una verificación rápida de estado y una grabación de ficha de entrada.|
 | Pequeña |SI  |Cumple un objetivo único y puntual que requiere pocos días de desarrollo. |
 | Verificable |SI  |Se prueba ingresando el DNI de un alumno al día, uno vencido y un número que no exista. |
+
+---
+
+### HU-03 — [Registrar pagos]
+
+| Campo | Detalle |
+|------|--------|
+| Historia | Como administrativo, quiero registrar pagos de membresías, para llevar el control de los ingresos. |
+| Módulo | Módulo 2 — Pagos |
+| Requisitos relacionados | RF-05 |
+
+#### Criterios de aceptación
+
+El sistema permite registrar un pago con monto, fecha y socio asociado.
+
+El estado de pago del socio se actualiza correctamente.
+
+La operación debe completarse en menos de 2 segundos.
+
+#### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|------------|------------|
+| Independiente | SI | No depende de otros módulos. |
+| Negociable | SI | Puede cambiar el método de pago. |
+| Valiosa | SI | Permite controlar ingresos. |
+| Estimable | SI | Operación simple. |
+| Pequeña | SI | Funcionalidad puntual. |
+| Verificable | SI | Se prueba registrando pagos. |
+
+---
+
+### HU-04 — [Registrar socio]
+
+| Campo | Detalle |
+|------|--------|
+| Historia | Como administrativo, quiero registrar nuevos socios, para mantener actualizada la base de datos. |
+| Módulo | Módulo 1 — Gestión de socios |
+| Requisitos relacionados | RF-01 |
+
+#### Criterios de aceptación
+
+El sistema permite ingresar los datos personales del socio.
+
+El sistema guarda correctamente la información.
+
+El socio queda disponible para futuras operaciones.
+
+#### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|------------|------------|
+| Independiente | SI | No depende de otros módulos complejos. |
+| Negociable | SI | Se pueden ajustar los campos requeridos. |
+| Valiosa | SI | Permite registrar clientes. |
+| Estimable | SI | Es una operación simple. |
+| Pequeña | SI | Función puntual. |
+| Verificable | SI | Se prueba registrando un socio. |
+
+---
+
+### HU-05 — [Consultar estado de pago]
+
+| Campo | Detalle |
+|------|--------|
+| Historia | Como cliente, quiero consultar mi estado de pago, para saber si estoy al día con la membresía. |
+| Módulo | Módulo 2 — Pagos |
+| Requisitos relacionados | RF-06 |
+
+#### Criterios de aceptación
+
+El cliente puede visualizar si su membresía está activa o vencida.
+
+El sistema muestra la información de manera clara.
+
+La consulta se realiza en menos de 2 segundos.
+
+#### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|------------|------------|
+| Independiente | SI | Consulta independiente. |
+| Negociable | SI | Puede cambiar la forma de visualización. |
+| Valiosa | SI | Permite al cliente conocer su estado. |
+| Estimable | SI | Consulta simple. |
+| Pequeña | SI | Función puntual. |
+| Verificable | SI | Se prueba con distintos estados. |
+
+---
+
+### HU-06 — [Gestionar turnos]
+
+| Campo | Detalle |
+|------|--------|
+| Historia | Como administrativo, quiero gestionar los turnos, para evitar superposición de horarios. |
+| Módulo | Módulo 3 — Turnos |
+| Requisitos relacionados | RF-09 |
+
+#### Criterios de aceptación
+
+El sistema permite crear, modificar y eliminar turnos.
+
+El sistema evita superposición de horarios.
+
+Los turnos se visualizan correctamente.
+
+#### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|------------|------------|
+| Independiente | SI | Puede funcionar como módulo separado. |
+| Negociable | SI | Puede variar la lógica de turnos. |
+| Valiosa | SI | Mejora la organización del gimnasio. |
+| Estimable | SI | Complejidad media. |
+| Pequeña | SI | Alcance controlado. |
+| Verificable | SI | Se prueba creando turnos. |
