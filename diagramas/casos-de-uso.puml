@@ -1,26 +1,48 @@
 @startuml
-title Diagrama de Casos de Uso - [Nombre del Sistema]
+
+title Diagrama de Casos de Uso - Sistema de Gestión de Gimnasio
 
 left to right direction
 
 ' --- Actores ---
-actor "[Actor principal]" as A1
-actor "[Actor secundario]" as A2
+actor Administrativo as A1
+actor Entrenador as A2
+actor Cliente as A3
 
 ' --- Sistema ---
-rectangle "[Nombre del Sistema]" {
-  usecase "[Caso de uso 1]" as UC1
-  usecase "[Caso de uso 2]" as UC2
-  usecase "[Caso de uso 3]" as UC3
+rectangle "Sistema de Gestión de Gimnasio" {
+
+  usecase "Iniciar sesión" as UC0
+  usecase "Buscar socio" as UC7
+  usecase "Registrar socio" as UC1
+  usecase "Registrar pago" as UC2
+  usecase "Registrar asistencia" as UC3
+  usecase "Asignar rutina" as UC4
+  usecase "Ver rutina" as UC5
+  usecase "Ver horarios" as UC6
+
 }
 
 ' --- Relaciones actor-caso de uso ---
 A1 --> UC1
 A1 --> UC2
-A2 --> UC3
+A1 --> UC3
+
+A2 --> UC4
+
+A3 --> UC5
+A3 --> UC6
 
 ' --- Relaciones entre casos de uso ---
-' UC2 .> UC1 : <<include>>
-' UC3 .> UC1 : <<extend>>
+UC1 ..> UC0 : <<include>>
+UC2 ..> UC0 : <<include>>
+UC3 ..> UC0 : <<include>>
+UC4 ..> UC0 : <<include>>
+UC5 ..> UC0 : <<include>>
+UC6 ..> UC0 : <<include>>
+
+UC2 ..> UC7 : <<include>>
+UC3 ..> UC7 : <<include>>
+UC4 ..> UC7 : <<include>>
 
 @enduml

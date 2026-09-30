@@ -1,31 +1,89 @@
 @startuml
-title Modelo Entidad-Relación - [Nombre del Sistema]
+title Modelo Entidad-Relación - Sistema de Gestión de Gimnasio
+
+hide circle
 
 ' --- Entidades ---
-entity Entidad1 {
-  * id_entidad1 : integer <<PK>>
+entity USUARIO {
+  * id_usuario : integer <<PK>>
   --
-  atributo1 : varchar
-  atributo2 : varchar
+  nombre : varchar
+  apellido : varchar
+  email : varchar
+  telefono : varchar
+  tipo_usuario : varchar
 }
 
-entity Entidad2 {
-  * id_entidad2 : integer <<PK>>
+entity SOCIO {
+  * id_usuario : integer <<PK>> <<FK>>
   --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+  fecha_nacimiento : date
+  estado_fisico : varchar
+  objetivo : varchar
 }
 
-entity Entidad3 {
-  * id_entidad3 : integer <<PK>>
+entity ENTRENADOR {
+  * id_usuario : integer <<PK>> <<FK>>
   --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+  especialidad : varchar
+  fecha_ingreso : date
+}
+
+entity PAGO {
+  * id_pago : integer <<PK>>
+  --
+  monto : decimal
+  fecha : date
+  id_socio : integer <<FK>>
+}
+
+entity RUTINA {
+  * id_rutina : integer <<PK>>
+  --
+  descripcion : varchar
+  fecha_asignacion : date
+  id_socio : integer <<FK>>
+  id_entrenador : integer <<FK>>
+}
+
+entity EJERCICIO {
+  * id_ejercicio : integer <<PK>>
+  --
+  nombre : varchar
+  descripcion : varchar
+  series : integer
+  repeticiones : integer
+  id_rutina : integer <<FK>>
+}
+
+entity CLASE {
+  * id_clase : integer <<PK>>
+  --
+  nombre : varchar
+  descripcion : varchar
+  horario : datetime
+  duracion : integer
+  id_entrenador : integer <<FK>>
+}
+
+entity ASISTENCIA {
+  * id_asistencia : integer <<PK>>
+  --
+  fecha_hora : datetime
+  id_socio : integer <<FK>>
+  id_clase : integer <<FK>>
 }
 
 ' --- Relaciones ---
 ' Sintaxis: EntidadA [cardinalidad] -- [cardinalidad] EntidadB : "etiqueta"
-Entidad1 ||--o{ Entidad2 : "relación"
-Entidad1 ||--o{ Entidad3 : "relación"
+USUARIO ||--o| SOCIO : "es tipo de"
+USUARIO ||--o| ENTRENADOR : "es tipo de"
+SOCIO ||--o{ PAGO : "realiza"
+SOCIO ||--o{ RUTINA : "tiene"
+ENTRENADOR ||--o{ RUTINA : "asigna"
+RUTINA ||--o{ EJERCICIO : "contiene"
+ENTRENADOR ||--o{ CLASE : "dicta"
+SOCIO ||--o{ ASISTENCIA : "registra"
+CLASE |o--o{ ASISTENCIA : "recibe"
 
 @enduml
