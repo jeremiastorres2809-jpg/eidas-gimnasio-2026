@@ -5,41 +5,54 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Pantalla / Módulo 1 — [Nombre]
+## Pantalla / Módulo 1 — [Login]
 
-**Wireframe:** `diagramas/wireframes/[archivo]`
+**Wireframe:** diagramas/wireframes/login.png
 
-**Patrones de diseño utilizados:** _(ej: Card, Modal, Step-by-step, Tabla con paginación, etc.)_
+**Patrones de diseño utilizados:** Formulario simple
 
-**Justificación:** _¿Por qué estos patrones tienen sentido para este caso de estudio y estos usuarios? No alcanza con nombrar el patrón._
+**Justificación:** Permite acceso rápido y claro para usuarios administrativos.
 
 **Formulario (si aplica):**
-- Cantidad de campos:
-- Flujo (todo en una pantalla / por pasos):
-- Validaciones relevantes:
+- Cantidad de campos: usuario, contraseña
+- Flujo: una sola pantalla
+- Validaciones relevantes:campos obligatorios
 
 ---
 
-## Pantalla / Módulo 2 — [Nombre]
+## Pantalla / Módulo 2 — [Socios]
 
-**Wireframe:** `diagramas/wireframes/[archivo]`
+**Wireframe:** diagramas/wireframes/socios.png
 
-**Patrones de diseño utilizados:**
+**Patrones de diseño utilizados:** Tabla + buscador
 
-**Justificación:**
+**Justificación:** Permite gestionar muchos socios fácilmente de manera rapida y sencilla.
 
 **Formulario (si aplica):**
-- Cantidad de campos:
+- Cantidad de campos: nombre, teléfono
 - Flujo (todo en una pantalla / por pasos):
-- Validaciones relevantes:
+- Validaciones relevantes: obligatorios
+
+---
+
+## Pantalla / Modulo 3 — [Pagos]
+
+**Wireframe:** diagramas/wireframes/pagos.png
+
+**Patrones:** Formulario + tabla
+
+**Justificación:** Facilita registrar pagos rápidamente y de forma segura
+
+**Formulario:**
+- Campos: monto, fecha
+- Validaciones: numérico
+- Flujo: una sola pantalla
 
 ---
 
 ## Consideraciones de accesibilidad
 
-_Al menos una consideración concreta, relacionada con el sistema y sus usuarios reales
-(no una mención genérica de "cumple con WCAG"). Ejemplos: contraste para usuarios con
-baja visión, tamaño de tap targets para uso móvil, navegación por teclado, textos
-alternativos en ícono-only buttons._
-
--
+- Botones grandes para uso móvil
+- Buen contraste de colores
+- Formularios poco complejos para usuarios no técnicos
+- Interfaz simple para evitar errores del administrativo  

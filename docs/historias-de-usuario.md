@@ -1,8 +1,4 @@
 # Historias de usuario
-
-_Presentar al menos una historia de usuario representativa por módulo._
-_Cada historia debe incluir formato clásico, criterios de aceptación y validación INVEST._
-
 ---
 
 ## HU-01 — [Ver rutina asignada]
