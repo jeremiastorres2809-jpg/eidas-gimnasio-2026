@@ -1,17 +1,19 @@
-@startuml
-
-title Modelo Entidad-Relación - Sistema de Gestión de Gimnasio
+@startuml er
+title Modelo ER - Sistema de Gestión de Gimnasio
 
 hide circle
 
-' --- Entidades ---
+
 entity USUARIO {
   * id_usuario : integer <<PK>>
   --
+  dni : varchar
   nombre : varchar
   apellido : varchar
   email : varchar
   telefono : varchar
+  nombre_usuario : varchar
+  contrasena : varchar
   tipo_usuario : varchar
 }
 
@@ -21,6 +23,7 @@ entity SOCIO {
   fecha_nacimiento : date
   estado_fisico : varchar
   objetivo : varchar
+  fecha_baja : date
 }
 
 entity ENTRENADOR {
@@ -30,12 +33,22 @@ entity ENTRENADOR {
   fecha_ingreso : date
 }
 
+entity PLAN {
+  * id_plan : integer <<PK>>
+  --
+  nombre : varchar
+  precio : decimal
+  duracion_dias : integer
+}
+
 entity PAGO {
   * id_pago : integer <<PK>>
   --
   monto : decimal
   fecha : date
+  fecha_vencimiento : date
   id_socio : integer <<FK>>
+  id_plan : integer <<FK>>
 }
 
 entity RUTINA {
@@ -75,11 +88,11 @@ entity ASISTENCIA {
   id_clase : integer <<FK>>
 }
 
-' --- Relaciones ---
-' Sintaxis: EntidadA [cardinalidad] -- [cardinalidad] EntidadB : "etiqueta"
-USUARIO ||--o| SOCIO : "es tipo de"
+
+USUARIO ||--o| SOCIO : es "
 USUARIO ||--o| ENTRENADOR : "es tipo de"
 SOCIO ||--o{ PAGO : "realiza"
+PLAN ||--o{ PAGO : "se paga con"
 SOCIO ||--o{ RUTINA : "tiene"
 ENTRENADOR ||--o{ RUTINA : "asigna"
 RUTINA ||--o{ EJERCICIO : "contiene"
