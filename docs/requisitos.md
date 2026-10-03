@@ -20,7 +20,7 @@ El objetivo principal es mejorar la organización interna del gimnasio, optimiza
 |----|-----------|
 | RF-01 | El sistema debe permitir registrar nuevos socios con sus datos personales. |
 | RF-02 | El sistema debe permitir modificar la información de los socios existentes. |
-| RF-03 | El sistema debe permitir eliminar o dar de baja socios. |
+| RF-03 | El sistema debe permitir dar de baja socios. La baja es lógica: no se borra al socio ni su historial, solo se registra su fecha de baja. |
 | RF-04 | El sistema debe permitir consultar la información de cada socio. |
 
 ---
@@ -31,7 +31,7 @@ El objetivo principal es mejorar la organización interna del gimnasio, optimiza
 |----|-----------|
 | RF-05 | El sistema debe permitir registrar pagos de membresías. |
 | RF-06 | El sistema debe permitir consultar el estado de pago de los socios. |
-| RF-07 | El sistema debe permitir identificar socios con pagos vencidos. |
+| RF-07 | El sistema debe permitir identificar socios con pagos vencidos (un pago está vencido cuando la fecha de hoy supera la fecha de vencimiento del último pago). |
 
 ---
 
@@ -71,8 +71,8 @@ El objetivo principal es mejorar la organización interna del gimnasio, optimiza
 | ID | Requisito |
 |----|-----------|
 | RNF-01 | El sistema debe responder en menos de 2 segundos en operaciones comunes. |
-| RNF-02 | El sistema debe estar disponible durante el horario operativo del gimnasio. |
-| RNF-03 | El sistema debe ser capaz de manejar múltiples usuarios simultáneamente. |
+| RNF-02 | El sistema debe estar disponible durante el horario operativo del gimnasio, por lo menos, el 99% del tiempo. |
+| RNF-03 | El sistema debe ser capaz de manejar al menos 5 usuarios simultáneamente. |
 
 ---
 
@@ -80,8 +80,8 @@ El objetivo principal es mejorar la organización interna del gimnasio, optimiza
 
 | ID | Requisito |
 |----|-----------|
-| RNF-04 | El sistema debe garantizar la seguridad de los datos mediante autenticación de usuarios. |
-| RNF-05 | El sistema debe permitir distintos niveles de acceso según el rol del usuario. |
-| RNF-06 | El sistema debe contar con una interfaz intuitiva y fácil de usar. |
-| RNF-07 | El sistema debe almacenar la información de forma segura y persistente. |
+| RNF-04| El sistema debe garantizar la seguridad de los datos mediante autenticación de usuarios, con contraseñas encriptadas y cierre de sesión a los 25 minutos sin actividad.|
+| RNF-05 | El sistema debe permitir distintos niveles de acceso según el rol del usuario.|
+| RNF-06 | El sistema debe contar con una interfaz intuitiva y fácil de usar: un usuario nuevo debe poder registrar un socio en menos de 3 minutos sin ayuda.|
+| RNF-07 | El sistema debe almacenar la información de forma segura y persistente, con una copia de seguridad diaria. |
 | RNF-08 | El sistema debe ser accesible desde dispositivos móviles y de escritorio. |

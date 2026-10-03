@@ -4,7 +4,7 @@
 
 | Campo | Detalle |
 |------|--------|
-| Historia | Como administrativo, quiero registrar un socio con su nombre y teléfono, para que quede en la lista y pueda usar el gimnasio. |
+| Historia | Como administrativo, quiero registrar un socio con su nombre y dni, para que quede en la lista y pueda usar el gimnasio. |
 
 **Criterios de aceptación**
 
@@ -89,7 +89,7 @@
 |----------|---------------------|---------------------------------------------|
 | ¿Qué pasa si el saldo es insuficiente? (equivalente: el monto ingresado es inválido, vacío, no numérico o menor o igual a cero) | Rechaza el pago, muestra un mensaje de error y no guarda nada. | Analista: define la regla de validación del monto. |
 | ¿Qué pasa si el destinatario no existe o está dado de baja? (equivalente: el socio no existe o está dado de baja) | Si no existe, avisa y no permite registrar el pago. Si está de baja, avisa y pide confirmar antes de continuar. | Negocio: decide si se acepta el pago de un socio dado de baja (por ejemplo, para reactivarlo). |
-| ¿Qué pasa si el sistema descuenta el saldo y falla antes de acreditarlo del otro lado? (equivalente: se guarda el pago pero falla la actualización de la cuota al día del socio) | El registro del pago y la actualización de la cuota se hacen juntos o no se hace ninguno. Si falla uno, se deshace todo y se muestra error. | Técnica: implementa que la operación sea atómica (todo o nada). |
+| ¿Qué pasa si el sistema descuenta el saldo y falla antes de acreditarlo del otro lado? (equivalente: se guarda el pago pero falla la actualización de la cuota al día del socio) | El registro del pago y el pago se guarda completo con su vencimiento o no se guarda. Si falla uno, se deshace todo y se muestra error. | Técnica: implementa que la operación sea atómica (todo o nada). |
 | ¿Qué pasa si el usuario aprieta "Enviar" dos veces? (equivalente: aprieta "Registrar pago" dos veces) | Desactiva el botón después del primer clic. Si detecta un pago igual (mismo socio, monto y fecha) cargado hace segundos, pide confirmar antes de guardar otro. | Negocio: decide si dos pagos iguales el mismo día pueden ser válidos. Técnica: lo implementa. |
 | ¿Qué pasa si se cae la conexión justo después de confirmar? | Al volver la conexión no reintenta solo. Muestra la lista de últimos pagos del socio para que el administrativo verifique si se guardó antes de volver a cargarlo. | Técnica: define cómo se confirma el guardado. Analista: define el aviso al usuario. |
 

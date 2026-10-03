@@ -89,7 +89,7 @@ entity ASISTENCIA {
 }
 
 
-USUARIO ||--o| SOCIO : es "
+USUARIO ||--o| SOCIO : "es tipo de"
 USUARIO ||--o| ENTRENADOR : "es tipo de"
 SOCIO ||--o{ PAGO : "realiza"
 PLAN ||--o{ PAGO : "se paga con"
