@@ -8,7 +8,7 @@
 
 **Criterios de aceptación**
 
-1. Si completo nombre y teléfono y confirmo, el socio queda guardado y aparece en la tabla de socios.
+1. Si completo nombre y DNI, y confirmo, el socio queda guardado y aparece en la tabla de socios.
 2. Si falta el nombre o el teléfono, el sistema no guarda y pide completar los campos.
 3. Si ya existe un socio con el mismo teléfono, el sistema avisa y no lo duplica.
 

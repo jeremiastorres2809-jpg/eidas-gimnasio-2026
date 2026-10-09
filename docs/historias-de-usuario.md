@@ -43,7 +43,7 @@ El recepcionista ingresa el DNI del cliente en la pantalla de entrada.
 
 Si el cliente tiene el mes pago, el sistema guarda la fecha/hora de ingreso y muestra un cartel verde de "Acceso Permitido".
 
-Si la cuota está vencida o el DNI no existe, muestra un cartel rojo de "Membresía Vencida" o "Usuario no encontrado".
+Si la cuota está vencida, el sistema avisa con un cartel rojo de "Membresía vencida" y el administrativo decide si registra la asistencia igual.
 
 ### Validación INVEST
 
@@ -68,11 +68,17 @@ Si la cuota está vencida o el DNI no existe, muestra un cartel rojo de "Membres
 
 #### Criterios de aceptación
 
-El sistema permite registrar un pago con monto, fecha y socio asociado.
+El administrativo busca al socio por nombre o DNI, elige un plan e ingresa el monto, y el sistema registra el pago.
 
-El estado de pago del socio se actualiza correctamente.
+El pago se guarda con su fecha de vencimiento, calculada con la duración del plan. Si algo falla al guardar, no se guarda nada y se muestra un error.
 
-La operación debe completarse en menos de 2 segundos.
+Si el monto es cero, negativo o vacío, el sistema muestra un error y no registra el pago.
+
+Si el socio está dado de baja, el sistema no permite registrar el pago y lo avisa.
+
+Después de guardar, el pago aparece en "Últimos pagos" con su vencimiento.
+
+La operación se completa en menos de 2 segundos.
 
 #### Validación INVEST
 
@@ -97,11 +103,11 @@ La operación debe completarse en menos de 2 segundos.
 
 #### Criterios de aceptación
 
-El sistema permite ingresar los datos personales del socio.
+Si completo nombre, apellido, DNI y teléfono y confirmo, el socio queda guardado y aparece en la tabla de socios.
 
-El sistema guarda correctamente la información.
+Si falta algún dato obligatorio, el sistema no guarda y pide completar los campos.
 
-El socio queda disponible para futuras operaciones.
+Si ya existe un socio con el mismo DNI, el sistema avisa y no lo duplica.
 
 #### Validación INVEST
 
@@ -130,6 +136,10 @@ El cliente puede visualizar si su membresía está activa o vencida.
 
 El sistema muestra la información de manera clara.
 
+Si no tengo ningún pago registrado, el sistema muestra un aviso en lugar de una pantalla vacía.
+
+Si el vencimiento de mi último pago ya pasó, el sistema muestra "Cuota vencida" y la fecha en que venció.
+
 La consulta se realiza en menos de 2 segundos.
 
 #### Validación INVEST
@@ -157,9 +167,13 @@ La consulta se realiza en menos de 2 segundos.
 
 El sistema permite crear, modificar y eliminar turnos.
 
-El sistema evita superposición de horarios.
+Si cargo un turno con día, hora y entrenador, y confirmo, el turno queda guardado y aparece en la lista de horarios.
 
-Los turnos se visualizan correctamente.
+Si el turno se superpone en día y hora con otro del mismo entrenador, el sistema avisa y no lo guarda.
+
+Si modifico un turno y confirmo, los cambios se ven en la lista de horarios.
+
+Si elimino un turno, deja de aparecer en la lista de horarios.
 
 #### Validación INVEST
 

@@ -31,7 +31,7 @@ Las pantallas están pensadas para el uso diario en el gimnasio: a la gran parte
 
 ---
 
-## Pantalla / Modulo 3 — Pagos
+## Pantalla / Modulo 3 — Alta de socio
 
 **Wireframe:** diagramas/wireframes/pagos.png
 
