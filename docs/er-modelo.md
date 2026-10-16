@@ -20,11 +20,15 @@ _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 
 ## Descripción de atributos principales
 
+## Descripción de atributos principales
+
 ### USUARIO
 
 - `id_usuario` (PK): identifica a cada persona registrada.
 - `tipo_usuario`: indica si es socio o entrenador y define su acceso.
+- `nombre`, `apellido`: nombre completo de la persona.
 - `email`, `telefono`: datos de contacto.
+- `fecha_nacimiento`: permite calcular la edad, que no se guarda.
 
 ### SOCIO
 
@@ -44,6 +48,20 @@ _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 - `id_entrenador` (FK): entrenador que la asignó.
 - `fecha_asignacion`: permite saber cuál es la rutina vigente.
 
+### EJERCICIO
+
+- `id_ejercicio` (PK): identifica cada ejercicio.
+- `nombre`, `descripcion`: qué ejercicio es y cómo se hace.
+- `series`, `repeticiones`: cuánto se hace de cada uno.
+- `id_rutina` (FK): rutina a la que pertenece.
+
+### CLASE
+
+- `id_clase` (PK): identifica cada clase.
+- `nombre`, `descripcion`: qué clase es.
+- `horario`, `duracion`: cuándo empieza y cuánto dura.
+- `id_entrenador` (FK): entrenador que la dicta.
+
 ### ASISTENCIA
 
 - `id_asistencia` (PK): identifica cada registro.
@@ -61,3 +79,12 @@ Permite modificar o cambiar rutinas sin afectar otros datos. Cada rutina guarda 
 
 ### Decisión 3 — Generalización USUARIO → SOCIO / ENTRENADOR
 Los datos comunes (nombre, email, teléfono) se guardan una sola vez en USUARIO. Se descartó repetirlos en cada tabla porque duplicaría información.
+
+### Decisión 4 — Plan separado y vencimiento en cada pago
+Los tipos de membresía estan en PLAN, así se pueden cambiar precios o agregar planes sin tocar los pagos ya hechos. Cada pago guarda su `fecha_vencimiento`. Se descartó guardar un campo "estado de pago" en SOCIO porque cambia solo con el paso del tiempo y habría que actualizarlo todos los días; calculándolo a partir del vencimiento nunca queda desactualizado.
+
+### Decisión 5 — Baja lógica con `fecha_baja`
+Al dar de baja a un socio no se borra su registro: se completa `fecha_baja`. Se descartó eliminarlo porque se perderían sus pagos y asistencias anteriores, que el gimnasio necesita para llevar el control.
+
+### Decisión 6 — El administrativo no tiene tabla propia
+El administrativo no tiene datos propios más allá de los de cualquier usuario, así que se identifica con `tipo_usuario = administrativo` y usa las credenciales de USUARIO. Se descartó una tabla ADMINISTRATIVO vacía porque no aportaría información.

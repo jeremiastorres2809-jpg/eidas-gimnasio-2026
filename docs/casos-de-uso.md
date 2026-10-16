@@ -74,7 +74,7 @@
 |--|-----------|-----------------------|
 | E1 | El monto no es numérico o es menor o igual a cero | Muestra el error en el campo y no guarda |
 | E2 | No se encuentra al socio | Avisa que no hay resultados y no permite continuar |
-| E3 | El socio está dado de baja | Avisa y pide confirmar antes de continuar |
+| E3 | El socio está dado de baja | Avisa que el socio está dado de baja y no registra el pago |
 | E4 | Falla el guardado | Deshace la operación, muestra error y no deja el pago a medias |
 
 | Campo | Detalle |
