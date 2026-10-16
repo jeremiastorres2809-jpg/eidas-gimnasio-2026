@@ -24,9 +24,9 @@ El sistema propuesto busca concentrar toda la información en un único lugar, f
 
 | Entrega | Descripción | Fecha | Estado |
 |---------|-------------|-------|--------|
-| EP-01 |Stakeholders+Requisitos|19/08/26|en progreso |
-| EP-02 | | | |
-| Final | Versión definitiva | | |
+| EP-01 |Stakeholders+Requisitos|19/08/26|Completo|
+| EP-02 |ModeloER+DiseñoUI+wireframes|25/09|Completo |
+| Final |TP completo: requisitos, historias de usuario, casos de uso, modelo ER, diseño UI y slicing|30/09/26|Completo ,con correcciones del 01/10-16/10|
 
 ## Estructura del repositorio
 
